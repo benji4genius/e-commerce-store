@@ -30,5 +30,11 @@ public class CategoryController {
        return categoryService.listCategory();
     }
 
+    @PostMapping("/update/{categoryId}")
+    public String updateCategory(@PathVariable("categoryId") int categoryId, @RequestBody Category category) {
+        System.out.println("category Id " + categoryId);
+        categoryService.editCategory(categoryId, category);
+        return "testing";
+    }
 
 }

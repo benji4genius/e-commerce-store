@@ -22,4 +22,11 @@ public class CategoryService {
 
     }
 
+    public void editCategory(int categoryId, Category updateCategory) {
+        Category category = categoryRepo.getById(categoryId);
+        category.setCategoryName(updateCategory.getCategoryName());
+        category.setDescription(updateCategory.getDescription());
+        category.setImageUrl(updateCategory.getImageUrl());
+        categoryRepo.save(category);
+    }
 }
