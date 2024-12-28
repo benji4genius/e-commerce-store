@@ -21,11 +21,11 @@ public class CategoryService {
       return categoryRepo.findAll();
 
     }
-    /* This method is called the categoryController class, and it uses to
-    execute the category and if you look closely this is a direct replica of
-    the category entity in the model, and it is being called by calling the getters,
+    /* This method is called by the categoryController class, and it used to
+    execute the updating of the category entity and if you look closely this is a direct replica of
+    the category entity in the model, and it is being called by calling the getter,
      and the setter methods in the category in the model folder*/
-    
+
     public void editCategory(int categoryId, Category updateCategory) {
         Category category = categoryRepo.getById(categoryId);
         category.setCategoryName(updateCategory.getCategoryName());
