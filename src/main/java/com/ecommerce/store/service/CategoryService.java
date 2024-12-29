@@ -21,6 +21,14 @@ public class CategoryService {
       return categoryRepo.findAll();
 
     }
+    /*This method is initialized in the CategoryRepo interface in the categoRepo method
+    and the method body includes the findByCategoryName, and it takes in String categoryName
+    as an argument JpaRepository encapsulates which is why CategoryRepo interface extends JpaRepository */
+    public Object readCategory(String categoryName) {
+        return categoryRepo.findByCategoryName(categoryName);
+    }
+
+
     /* This method is called by the categoryController class, and it used to
     execute the updating of the category entity and if you look closely this is a direct replica of
     the category entity in the model, and it is being called by calling the getter,
@@ -33,4 +41,10 @@ public class CategoryService {
         category.setImageUrl(updateCategory.getImageUrl());
         categoryRepo.save(category);
     }
+
+
+    public boolean findById(int categoryId) {
+        return categoryRepo.findById(categoryId).isPresent();
+    }
+
 }

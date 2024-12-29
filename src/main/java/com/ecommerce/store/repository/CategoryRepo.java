@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoryRepo extends JpaRepository<Category, Integer> {
-
+    Category findByCategoryName(String categoryName);// This is called by redCategory method in categoryController class
 
 }
